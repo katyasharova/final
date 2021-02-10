@@ -1,0 +1,21 @@
+<h2><%= alert %></h2>
+
+<div class="form-io">
+<b>Вход в систему</b>
+<%= form_tag auth_path, :method => 'get' do %>
+  <div class=”field”>
+    <%= text_field_tag :login, '', placeholder: "Логин", class: 'textarea' %>
+  </div>
+  <div class=”field”>
+    <%= password_field_tag :password, '', placeholder: "Пароль", class: 'textarea' %>
+  </div>
+  <div class=”actions”>
+    <%= submit_tag 'Войти', class: 'button' %>
+  </div>
+<% end %>
+<p>
+  Или
+  <%= link_to "зарегистрируйтесь", signup_url %>
+</p>
+</div>
+

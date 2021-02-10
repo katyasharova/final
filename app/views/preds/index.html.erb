@@ -1,0 +1,20 @@
+<h2></h2>
+
+<%= link_to '<button class="list-button">Список пользователей</button>'.html_safe, users1_path%>
+<%= link_to '<button class="exit-button">Выйти из системы</button>'.html_safe, logout_path%>
+
+<h2>Добавить предсказание!</h2>
+
+<%= form_for @pred do |f| %>
+    <%= f.text_area :text, size: "40x8" %>
+    <%= f.submit "Добавить <3" %>
+<% end %>
+
+<% @preds.each do |t| %>
+    <p><%= t.id %></p>
+    <p><%= t.text %> <%= link_to 'Удалить', pred_path(t),
+              method: :delete,
+              data: { confirm: 'Вы уверены?' } %></p>
+<% end %>
+
+<br> <%= link_to 'Back', root_path %>

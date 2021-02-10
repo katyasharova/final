@@ -1,0 +1,2 @@
+class Pred < ApplicationRecord
+end

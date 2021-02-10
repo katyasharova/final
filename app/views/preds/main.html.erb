@@ -1,0 +1,14 @@
+<h2><%= alert %></h2>
+
+<%= link_to '<button class="list-button">Список пользователей</button>'.html_safe, users1_path%>
+<%= link_to '<button class="exit-button">Выйти из системы</button>'.html_safe, logout_path%>
+
+<div class="form-io">
+<%= form_tag('/preds/main', :method => 'get') do %>
+        <%= submit_tag 'Получить предсказание', class: 'button', id: 'submit-but' %>
+    <% end %>
+</div>
+
+<p><%= @pred1.text if !@pred1.nil? %></p>
+
+<br> <%= link_to 'add', index_path %>
